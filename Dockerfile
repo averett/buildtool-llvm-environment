@@ -12,8 +12,9 @@ COPY --from=build-cmake /install/ /usr/local
 RUN mkdir /install && \
 	curl -sSL https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.0/llvm-project-13.0.0.src.tar.xz | tar xJ && \
 	cd llvm-project-13.0.0.src && \
-	cmake -S llvm -B build -G "Ninja" -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libcxx;libcxxabi;libunwind;lldb;compiler-rt;lld;polly;cross-project-tests" -DCMAKE_BUILD_TYPE="Release" -DCMAKE_INSTALL_PREFIX="/install" && \
-	cmake --build build --target install
+	cmake -S llvm -B build -G "Ninja" -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libcxx;libcxxabi;libunwind;lldb;compiler-rt;lld;polly;cross-project-tests" -DCMAKE_BUILD_TYPE="Release" -DCMAKE_INSTALL_PREFIX="/install"
+
+#RUN cmake --build build --target install
 
 
 
