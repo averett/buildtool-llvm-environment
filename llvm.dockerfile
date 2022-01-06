@@ -39,8 +39,10 @@ RUN cmake --build build
 RUN cmake --build build --target install
 
 FROM build-base
+RUN dnf -yq install ninja-build && dnf -q clean all
 COPY --from=build-cmake /install/ /usr/local
 COPY --from=build-llvm /install/ /usr/local
+RUN ln -s /usr/local/bin/ld.lld /usr/local/bin/ld
 
 
 # vim: set ft=dockerfile:
