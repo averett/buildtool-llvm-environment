@@ -42,18 +42,5 @@ FROM build-base
 COPY --from=build-cmake /install/ /usr/local
 COPY --from=build-llvm /install/ /usr/local
 
-#RUN \
-#	ln -s /usr/local/bin/llvm-addr2line /usr/bin/addr2line && \
-#	ln -s /usr/local/bin/llvm-ar /usr/bin/ar && \
-#	ln -s /usr/local/bin/llvm-cxxfilt /usr/bin/cppfilt && \
-#	ln -s /usr/local/bin/llvm-install-name-tool /usr/bin/install-name-tool && \
-#	ln -s /usr/local/bin/llvm-nm /usr/bin/nm && \
-#	ln -s /usr/local/bin/llvm-objcopy /usr/bin/objcopy && \
-#	ln -s /usr/local/bin/llvm-objdump /usr/bin/objdump && \
-#	ln -s /usr/local/bin/llvm-ranlib /usr/bin/ranlib && \
-#	ln -s /usr/local/bin/llvm-readelf /usr/bin/readelf && \
-#	ln -s /usr/local/bin/llvm-size /usr/bin/size && \
-#	ln -s /usr/local/bin/llvm-strings /usr/bin/strings && \
-#	ln -s /usr/local/bin/llvm-strip /usr/bin/strip
 
 # vim: set ft=dockerfile:
